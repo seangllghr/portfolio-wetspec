@@ -1,0 +1,13 @@
+{
+    "ports": {
+        "button_port": 2,
+        "dht_port": 4,
+        "dial_port": 1,
+        "ledbar_port": 5,
+        "light_port": 0
+    },
+    "log_file": "/home/pi/bin/weatherstation/station.log",
+    "data_file": "/home/pi/bin/weatherstation/weather_data.json",
+    "sampling_period": 1800,
+    "light_threshold": 20
+}

@@ -1,0 +1,49 @@
+#+TITLE: SysTech WetSpec
+#+subtitle: or How I Learned to Stop Worrying and Develop Embedded Python Applications
+
+* The WetSpec Weatherstation
+
+I developed the WetSpec weatherstation application
+    for a course in embedded programming
+    during my Bachelor's degree program at SNHU.
+The system was built and tested on a Raspberry Pi 3 Model B
+    using hardware from the [[https://www.dexterindustries.com/grovepi/][GrovePi IoT sensor kit]].
+It implements an environmental monitoring apparatus
+    capable of tracking ambient temperature and relative humidity
+    during daylight hours,
+    as well as a simple single-page web dashboard
+    for data visualization and basic administrative tasks.
+The embedded application is written in Python,
+    and makes extensive use of Python's ~asyncio~ library
+    to make efficient use of the Raspberry Pi's limited computing resources,
+    while the dashboard is served by an Express.js backend
+    with Canvas.js providing charting functionality on the frontend.
+See the weatherstation and dashboard in action
+    in [[https://vimeo.com/700991691][this video]].
+
+** Installation
+The code included in this repository
+    is the essential code for the WetSpec system and its web dashboard,
+    as it was originally implemented on my hardware.
+The Raspberry Pi device and GrovePi hardware
+    require additional setup and configuration require additional setup
+    to enable autostart-on-boot, as featured in the demo.
+Explanation of these steps is beyond the scope of these instructions.
+However, the code does make some assumptions.
+
+Assuming you've installed Python and the GrovePi Python libraries,
+    you should be able to run the weatherstation software
+    from the =weatherstation= directory with
+#+begin_src shell
+./weatherstation.py
+#+end_src
+
+With Node.js and ~npm~ installed,
+    run ~npm install~ in =dashboard= to install the dashboard's dependencies,
+    then start the server with
+#+begin_src shell
+node server.js
+#+end_src
+
+If everything worked,
+    the weatherstation should be up and running.

@@ -1,0 +1,120 @@
+html {
+  height: 100vh;
+  font-size: 2.5em;
+}
+
+body {
+  background-color: #2a2a2a;
+  color: #ddd;
+}
+
+footer {
+  font-size: .75rem;
+  grid-area: footer;
+  place-self: end center;
+}
+
+#chartContainer {
+  display: none;
+  grid-area: chart;
+}
+
+.control-button {
+  background-color: #c0504e;
+  border-radius: 0.25rem;
+  border: none;
+  color: #fff;
+  display: none;
+  margin: 1rem 2rem;
+  padding: 1rem;
+  align-self: center;
+}
+
+.dashboard {
+  display: grid;
+  height: 100vh;
+  grid: "title" min-content
+        "chart" 6fr
+        "message" 1fr
+        "button" 1fr
+        "button" 1fr
+        "button" 1fr
+        "footer" min-content
+}
+
+.status-message {
+  grid-area: message;
+  max-width: 72rem;
+  text-align: center;
+}
+
+.status-message span {
+  display: block;
+  margin: 1rem;
+}
+
+.title {
+  display: none;
+  grid-area: title;
+  text-align: center;
+  margin: 0;
+}
+
+@media (min-aspect-ratio: 3/4) {
+
+  html {
+    font-size: 1.25em;
+  }
+
+}
+
+@media (orientation: landscape) {
+
+  html {
+    font-size: 1em;
+  }
+
+  .dashboard {
+    grid: "title title" min-content
+          "button chart" 2fr
+          "button chart" 2fr
+          "button chart" 2fr
+          "message message" 1fr
+          "footer footer" min-content
+          / 1fr 6fr
+  }
+
+}
+
+@media (min-width: 72em) {
+
+  html {
+    font-size: 1.5rem;
+  }
+
+  .button-left {
+    grid-column: 2;
+  }
+
+  .button-right {
+    grid-column: 3;
+  }
+
+  .control-button {
+    grid-row: 4;
+  }
+
+  .dashboard {
+    grid: ". title title ." min-content
+          "chart chart chart chart" 5fr
+          ". message message ." 2fr
+          ". button button ." 1fr
+          ". footer footer ." min-content
+          / 1fr 1fr 1fr 1fr
+  }
+
+  .title {
+    margin: 1rem;
+  }
+
+}
